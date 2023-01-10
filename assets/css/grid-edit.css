@@ -1,0 +1,177 @@
+/* COLORS - Hover*/
+/* COLORS - Font*/
+/* Product Column Label*/
+ .product-label {
+	 cursor: pointer;
+}
+ .product-label:hover {
+	 background-color: #eee;
+}
+ .product-label.selected {
+	 background-color: #ccc;
+}
+ .product-radio {
+	 visibility: hidden !important;
+}
+ #lfb_bootstraped.lfb_bootstraped input[type="radio"] {
+	 vertical-align: text-bottom;
+	 visibility: hidden;
+}
+/* Product Column and Responsiveness*/
+ .product_column {
+	 display: grid !important;
+	 grid-template-columns: repeat(4, 1fr);
+	 grid-gap: 20px;
+	 grid-column-gap: 15px;
+	 grid-row-gap: 15px;
+	 padding: 10px, 10px, 10px, 10px;
+}
+ @media (max-width: 1024px) {
+	 .product_column {
+		 grid-template-columns: repeat(2, 1fr);
+	}
+}
+ @media (max-width: 768px) {
+	 .product_column {
+		 grid-template-columns: repeat(2, 1fr);
+	}
+}
+ @media (max-width: 576px) {
+	 .product_column {
+		 grid-template-columns: 1fr;
+	}
+}
+/* Div Box Background and Hover*/
+
+.div-box-product {
+    transition: 
+      border 998ms ease-in-out 69ms, 
+      border-radius 998ms ease-in-out 69ms, 
+      transform 300ms ease-out;
+  }
+  
+  .div-box-product:hover {
+    border: 100% solid #ddb069;
+   border-radius: 100%;
+    transform: translate(0px, 0px) scale(1.1, 1.1);
+  }
+  
+/* .div-box-product {
+	 box-shadow: inset 0 0 0 0 #ddb069;
+	 color: #70707b;
+	 margin: 0 -0.25rem !important;
+	 padding-top: 50px !important;
+     height:100%;
+}
+ .div-box-product:selected {
+	 box-shadow: inset 3000px 0 0 0 #ddb069;
+	 color: white;
+	 transition: color 0.5s ease-in-out;
+	 transition: box-shadow 0.5s ease-in-out;
+}
+ .div-box-product:hover {
+	 box-shadow: inset 1000px 0 0 0 #ddb069;
+	 color: white;
+	 transition: color 0.5s ease-in-out;
+	 transition: box-shadow 0.5s ease-in-out;
+     height:100%;
+}*/
+/* Image Column Padding */
+ #lfb_form.lfb_bootstraped #lfb_mainPanel .lfb_genSlide .lfb_genContent img {
+	 padding-top: 50px !important;
+}
+ .product_column h2 {
+     font-family: "Helvetica",Verdana,Arial,sans-serif;
+	 background: transparent;
+	 font-size: 1.5em !important;
+	 font-weight: 200 !important;
+	 letter-spacing: 3.5px;
+	 line-height: 40px;
+	 margin-bottom: 10px;
+	 margin-top: 40px !important;
+	 padding: 0px;
+	 text-align: center;
+	 text-transform: uppercase;
+	 vertical-align: baseline;
+	 word-wrap: break-word;
+}
+ .price {
+	 background: #e6c693 !important;
+	 color: #fff;
+	 box-sizing: border-box;
+	 font-size: 30px !important;
+	 font-weight: normal !important;
+	 letter-spacing: 15px !important;
+	 line-height: 57px;
+	 margin: 0px;
+	 margin-bottom: 20px !important;
+	 margin-top: 20px !important;
+	 overflow-wrap: break-word;
+	 padding: 0px;
+	 text-align: center;
+	 text-transform: uppercase;
+	 vertical-align: baseline;
+	 word-wrap: break-word;
+}
+ .div-box-product li {
+	 background: transparent;
+	 box-sizing: border-box;
+	 font-size: 18px !important;
+	 font-weight: normal;
+	 line-height: 20px !important;
+	 list-style: outside !important;
+	 padding: 5px !important;
+	 margin-left: 20px !important;
+	 margin-right: 10px !important;
+	 text-align: left;
+	 vertical-align: baseline;
+	 word-wrap: break-word;
+}
+ .product_column > * {
+	 display: grid;
+	 grid-template-rows: 300px 100px repeat(auto-fill, 100px) 200px 200px;
+	/* Set the size of the top, middle, and bottom rows */
+	 grid-template-areas: "image" "heading" "list" "footer" "radio";
+}
+/* Assign the grid areas to the respective elements */
+ .product_column > img {
+	 grid-area: image;
+	/* Assign the image element to the image grid area */
+	 grid-row: 1;
+}
+ .product_column > h2 {
+	 grid-area: heading;
+	/* Assign the h2 element to the heading grid area */
+	 grid-row: 2;
+}
+ .product_column > li {
+	 grid-area: list;
+	/* Assign the ul element to the list grid area */
+	 grid-row: 3;
+}
+ .product_column > h2:last-of-type {
+	 grid-area: footer;
+	/* Assign the second h2 element to the footer grid area */
+	 grid-row: 4;
+	/* Make the element occupy the entire middle row */
+	 background-color: #2ed3b7 !important;
+	/* Set the background color for the middle row */
+	 vertical-align: text-bottom !important;
+}
+ .product_column > radio {
+	 grid-area: radio;
+	/* Assign the button element to the footer grid area */
+	 grid-row: 5;
+}
+/*input[type="radio"] :before {
+	/* Style the label content: "";
+	 display: inline-block;
+	 width: 20px;
+	 height: 20px;
+	 border: 2px solid #333;
+	 border-radius: 50%;
+	 vertical-align: middle;
+	 margin-right: 10px;
+}
+*/
+ 

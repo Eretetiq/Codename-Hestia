@@ -1,0 +1,179 @@
+:root{
+--column-background: #ebebeb;
+--column: #bab6ae;
+--column-selected: #d3b482;
+--column-hover: #f3d5a5;
+
+--price: #e6c693;
+--price-font: #fff;
+
+--color-two: #70707B;
+
+--font: "Helvetica", Verdana, Arial, sans-serif;
+}
+
+
+/* Product Column Label*/
+.label {
+  cursor: pointer;
+}
+.div-box-product:hover {
+  background-color: var(--column-hover);
+}
+.product_column.selected {
+  background-color: var(--column);
+}
+/* Product Column and Responsiveness*/
+.product_column {
+  background-color: var(--column-background);
+  display: grid ;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  padding: 10px,10px,10px,10px;
+}
+
+@media (max-width: 1024px) {
+  .product_column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product_column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .product_column {
+    grid-template-columns: 1fr;
+  }
+}
+.product_column > * {
+  display: grid;
+  grid-template-rows: 300px 100px repeat(auto-fill, 100px) 200px 200px; /* Set the size of the top, middle, and bottom rows */
+  grid-template-areas:
+    "image"
+    "heading"
+    "list"
+    "footer"
+    "radio";
+/* Assign the grid areas to the respective elements */
+}
+
+.product_column > img {
+  grid-area: image; /* Assign the image element to the image grid area */
+grid-row: 1;
+}
+
+.product_column > h2 {
+  grid-area: heading; /* Assign the h2 element to the heading grid area */
+grid-row: 2;
+}
+
+.product_column > li {
+  grid-area: list; /* Assign the ul element to the list grid area */
+grid-row: 3;
+}
+
+.product_column > h2:last-of-type {
+  grid-area: footer; /* Assign the second h2 element to the footer grid area */
+  grid-row: 4; /* Make the element occupy the entire middle row */
+  background-color: #2ED3B7 ; /* Set the background color for the middle row */
+  vertical-align: text-bottom ;
+}
+
+.product_column > radio {
+  grid-area: radio; /* Assign the button element to the footer grid area */
+grid-row: 5;
+}
+
+.product-radio {
+  visibility: hidden;
+}
+input[type="radio"] {
+  vertical-align: text-bottom;
+  visibility: hidden;
+}
+
+ /* Div Box Background and Hover*/
+ .div-box-product:selected {  
+  box-shadow: inset 0 0 0 0 $color-one;
+  color: $color-two;
+  margin: 0 -.25rem ;
+  padding-top: 50px ;
+  
+}
+
+/*.div-box-product:selected {  
+  box-shadow: inset 300px 0 0 0 $color-one;
+  color: var(--column-selected);
+  transition: color .5s ease-in-out;
+  transition: box-shadow .5s ease-in-out;
+}*/
+/*.div-box-product:hover {
+  box-shadow: inset 300px 0 0 0 $color-one;
+  color: var(--column-hover);
+  transition: color .5s ease-in-out;
+  transition: box-shadow .5s ease-in-out;
+}*/
+.product_column img {
+  padding-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+}
+
+.product_column .price {
+  font-family: var(--font);
+  background: var(--price);
+  color: var(--price-font);
+  box-sizing: border-box;
+  font-size: 30px ;
+  font-weight: 100 !important;
+  letter-spacing: 15px ;
+  line-height: 57px;
+  margin: 0px;
+  margin-bottom: 20px ;
+  margin-top: 5px ;
+  overflow-wrap: break-word;
+  padding: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  word-wrap: break-word;
+  }
+
+.product_column h2 {
+font-family: var(--font);
+background: transparent;
+font-size: 25px ;
+font-weight: 200 ;
+letter-spacing: 5px;
+line-height: 44.3px;
+margin-bottom: 10px;
+margin-top: 40px;
+padding: 0px;
+text-align: center;
+text-transform: uppercase;
+vertical-align: baseline;
+word-wrap: break-word;
+}
+
+.div-box-product li {
+/*background: transparent;*/
+box-sizing: border-box;
+font-size: 18px ;
+font-weight: normal;
+line-height: 20px ;
+list-style: outside ;
+padding: 5px ;
+margin-left: 20px ;
+margin-right: 10px ;
+text-align: left;
+vertical-align: baseline;
+word-wrap: break-word;
+}
