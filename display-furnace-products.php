@@ -1,13 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-  die;
-}
-function hestia_enqueue_styles_and_scripts() {
-  wp_enqueue_style( 'hestia-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/grid.css' );
-  wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
-function display_products($atts) {
+function display_furnace_products($atts) {
 // Extract shortcode attributes
   $atts = shortcode_atts([
     'type' => 'gas-furnace',
@@ -22,7 +14,6 @@ function display_products($atts) {
 		'posts_per_page' => 4,
 		'orderby' => 'meta_value',
 		'order' => 'ASC',
-		'meta_key' => 'hvac_product_price',
 		'tax_query' => [
       [
         'taxonomy' => 'product_type',
@@ -37,8 +28,8 @@ function display_products($atts) {
     ],
     'meta_query' => [
       [
-        'key' => 'hvac_featured_product',
-        'value' => 'Yes',
+        'key' => 'hvac_product_featured',
+        'value' => 'yes',
       ],
       [
         'key' => 'hvac_product_rating',
@@ -100,6 +91,3 @@ wp_reset_postdata();
 // Return the output
 return $output;
   }
-add_shortcode('display-furnace-products', 'display_furnace_products');
-//[display-furnace-products rating='80' tier='1'] - Metal Tiers 1-6
-//[display-furnace-products rating='90' tier='1'] - PVC Tiers 1-6
