@@ -3,11 +3,11 @@ function display_package_products($atts) {
 // Extract shortcode attributes
  $atts = shortcode_atts([
   'type' => 'packaged-unit',
-   'brand' => 'trane',
-   'source' => '',
-   'tier' => '',  // Add default value for 'tier' attribute
+  'brand' => 'trane',
+  'source' => '',
+  'tier' => '',  // Add default value for 'tier' attribute
   ], $atts);
-   $tier = isset($atts['tier']) ? $atts['tier'] : '';
+  $tier = isset($atts['tier']) ? $atts['tier'] : '';
 // Set up query arguments
 	  $query_args = [
 		'post_type' => 'hvac-product',
@@ -28,13 +28,13 @@ function display_package_products($atts) {
     ],
     'meta_query' => [
     [
-       'key' => 'hvac_product_featured',
+      'key' => 'hvac_product_featured',
        'value' => 'yes',
     ],
-      [
-        'key' => 'hvac_product_packaged_unit_type',
-       'value' => $atts['source'],
-     ],
+     [
+      'key' => 'hvac_product_packaged_unit_type',
+     'value' => $atts['source'],
+    ],
    ],
   ];
 // Run the query

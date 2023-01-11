@@ -18,7 +18,12 @@
   cursor: pointer;
 }
 .div-box-product:hover {
+  transition: all 400ms ease-in-out;
+    transform: scale(1.02);
   background-color: var(--column-hover);
+  /*border: 100% solid #ddb069;*/
+  /*border-radius: 100%;*/
+   /*transform: translate(0px, 0px) scale(1.1, 1.1);*/
 }
 .product_column.selected {
   background-color: var(--column);

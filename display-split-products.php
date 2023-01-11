@@ -3,34 +3,34 @@ function display_split_products($atts) {
 // Extract shortcode attributes
   $atts = shortcode_atts([
     //'type' => 'split',
-    'brand' => 'trane',
-    'rating' => '',
+   'brand' => 'trane',
+   'rating' => '',
     'tier' => '',  // Add default value for 'tier' attribute
   ], $atts);
-   $tier = isset($atts['tier']) ? $atts['tier'] : '';
+  $tier = isset($atts['tier']) ? $atts['tier'] : '';
 // Set up query arguments
 	  $query_args = [
 		'post_type' => 'hvac-product',
 		'posts_per_page' => 4,
-		'orderby' => 'meta_value',
-		'order' => 'ASC',
-		'tax_query' => [
+	//	'orderby' => 'meta_value',
+	//	'order' => 'ASC',
+	'tax_query' => [
+      //[
+        //'taxonomy' => 'product_type',
+        //'field' => 'slug',
+        //'terms' => $atts['type'],
+      //],
       [
-        'taxonomy' => 'product_type',
-        'field' => 'slug',
-        'terms' => $atts['type'],
-      ],
-      [
-        'taxonomy' => 'product_manufacturer',
-        'field' => 'slug',
-        'terms' => $atts['brand'],
+      'taxonomy' => 'product_manufacturer',
+      'field' => 'slug',
+      'terms' => $atts['brand'],
       ],
     ],
     'meta_query' => [
       [
-        'key' => 'hvac_featured_product',
-        'value' => 'yes',
-      ],
+     'key' => 'hvac_product_featured',
+     'value' => 'yes',
+     ],
       [
         'key' => 'hvac_product_rating',
         'value' => $atts['rating'],
@@ -95,6 +95,3 @@ wp_reset_postdata();
 // Return the output
 return $output;
   }
-add_shortcode('display-split-products', 'display_split_products');
-//[display-split-products rating='80' tier='1'] - Metal Tiers 1-6
-//[display-split-products rating='90' tier='1'] - PVC Tiers 1-6
