@@ -25,9 +25,10 @@
     die;
   }
   function hestia_enqueue_styles_and_scripts() {
-    wp_enqueue_style( 'hestia-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/wip-grid.css' );
+    wp_enqueue_style( 'general-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/general-grid.css' );
+    wp_enqueue_style( 'plugin-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/wip-grid.css' );
     wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
-
+   
   }
   add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 

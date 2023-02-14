@@ -15,38 +15,26 @@
         } else {
           console.error("Error: Could not find elements with the product_title and product_price classes.");
         }
-      }
-//Hover Portion of the Script - OLd
-      // Remove the "selected" class from all columns
-      /*function updateSelectedClass(event) {
-          // Remove the "selected" class from all columns
-          let divs = document.querySelectorAll(".product_column");
-          divs.forEach(div => div.classList.remove("selected"));
-        
-          // Add the "selected" class to the column of the selected radio button
-          let radioButton = event.target;
-          let div = radioButton.closest(".product_column");
-          div.classList.add("selected");
-        }*/
-        
+      } 
         function updateSelectedClass(event) {
           // Remove the "selected" class from all columns
-          let divs = document.querySelectorAll(".product_column");
+         /* let divs = document.querySelectorAll(".product_column");*/
+          let divs = document.querySelectorAll(".div-box-product");
           divs.forEach(div => div.classList.remove("selected"));
           
           // Add the "selected" class to the column of the selected radio button
           let radioButton = event.target;
           let div = radioButton.closest(".div-box-product");
           div.classList.add("selected");
-        
-          // Add the "selected" class to the .div-box-product elements in the selected column
-          /*let products = div.querySelectorAll(".div-box-product");*/
-         /* let products = div.querySelectorAll(".product_column");
-          products.forEach(product => {
-            product.classList.add("selected");
-          });*/
         }
         
       //Radio Buttons Add listener
         let radioButtons = document.querySelectorAll('input[type="radio"]');
         radioButtons.forEach(radioButton => radioButton.addEventListener('click', updateSelectedClass));
+// Selector to uncheck other radio buttons
+        $('input[type="radio"]').click(function() {
+          if ($(this).prop('checked')) {
+            $('input[type="radio"]').not(this).prop('checked', false);
+          }
+        });
+        
