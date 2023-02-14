@@ -8,7 +8,7 @@
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       (Codename: Blackwood) BxB Product Pull
+ * Plugin Name:       Blackwood BxB Product Pull
  * Plugin URI:        https://github.com/badwolfvi/blackwood-a24-plugin
  * Description:       The plugin enables an HVAC website to pull products from a custom post type called "hvac-product" in WordPress, based on certain parameters such as product type, manufacturer, rating and price tier. 
  * Version:           15.0.4
@@ -24,15 +24,13 @@
  if ( ! defined( 'ABSPATH' ) ) {
     die;
   }
-  //Calls CSS and Java
   function hestia_enqueue_styles_and_scripts() {
-    wp_enqueue_style( 'hestia-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/grid.css' );
+    wp_enqueue_style( 'hestia-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/wip-grid.css' );
     wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
 
   }
   add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 
-include_once('updater.php');
 require_once( 'display-split-products.php' );
 require_once( 'display-furnace-products.php' );
 require_once( 'display-package-products.php' );
