@@ -17,11 +17,11 @@
                   --font-checked:                     #d6d6d6;
             }
 /*Label*/
-            #lfb_bootstraped.lfb_bootstraped .label {
+            .label {
                   cursor: pointer;
             }
 /*Grid*/
-            Grid Setting #lfb_bootstraped.lfb_bootstraped .product_column > * {
+            Grid Setting .product_column > * {
                   display: grid;
                   grid-template-rows: 300px 100px repeat(auto-fill, 100px) 200px 200px;
             /* Set the size of the top, middle, and bottom rows */
@@ -29,7 +29,7 @@
             }
 /*Normal Settings*/            
       /*Column Box Normal*/  
-            #lfb_bootstraped.lfb_bootstraped .product_column {
+            .product_column {
                   background-color:transparent;
                   display: grid ;
                   grid-template-columns: repeat(4, 1fr);
@@ -41,13 +41,13 @@
                   transform: scale(1.00);
             }
       /*Product Div Normal*/          
-            #lfb_bootstraped.lfb_bootstraped .div-box-product {
+            .div-box-product {
                   transition: all 600ms ease-in-out;
                   transform: scale(1.00);
                   background-color: transparent;
             }
       /*Image Thumbnail Normal*/
-            #lfb_bootstraped.lfb_bootstraped .product_column img {
+            .product_column img {
                   padding-top: 20px;
                   display: block;
                   margin-left: auto;
@@ -61,10 +61,10 @@
                   -moz-filter: grayscale(100%);
             }
       /*Title Heading Normal*/     
-            #lfb_bootstraped.lfb_bootstraped h2, 
-            #lfb_bootstraped.lfb_bootstraped .bootstrap-datetimepicker-widget h2, 
-            #lfb_bootstraped.lfb_bootstraped .h2, 
-            #lfb_bootstraped.lfb_bootstraped .bootstrap-datetimepicker-widget .h2 {
+            h2, 
+            .bootstrap-datetimepicker-widget h2, 
+            .h2, 
+            .bootstrap-datetimepicker-widget .h2 {
                   font-family: var(--font);
                   background: transparent;
                   font-size: 25px ;
@@ -80,7 +80,7 @@
                   word-wrap: break-word;
             }
       /*Price Normal*/   
-            #lfb_bootstraped.lfb_bootstraped .product_column .price {
+            .product_column .price {
                   font-family: var(--font);
                   background: var(--price-background);
                   color: var(--price-font);
@@ -99,27 +99,27 @@
                   vertical-align: baseline;
                   word-wrap: break-word;
             }
-      /*Price LOST Normal*/ 
-            #lfb_bootstraped.lfb_bootstraped .product_column .price-lost {
-                  font-family: var(--font);
-                  color: var(--price-background);
-                  box-sizing: border-box;
-                  font-size: 14px ;
-                  font-weight: 100 !important;
-                  letter-spacing: 8px ;
-                  line-height: 30px;
-                  margin: 0px;
-                  margin-bottom: 20px ;
-                  margin-top: 5px ;
-                  overflow-wrap: break-word;
-                  padding: 0px;
-                  text-align: center;
-                  text-transform: uppercase;
-                  vertical-align: baseline;
-                  word-wrap: break-word;
-            }
+            /*Price LOST  Normal*/   
+                  .product_column .price-lost {
+                        font-family: var(--font);
+                        color: var(--price-background);
+                        box-sizing: border-box;
+                        font-size: 14px ;
+                        font-weight: 100 !important;
+                        letter-spacing: 8px ;
+                        line-height: 30px;
+                        margin: 0px;
+                        margin-bottom: 20px ;
+                        margin-top: 5px ;
+                        overflow-wrap: break-word;
+                        padding: 0px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        vertical-align: baseline;
+                        word-wrap: break-word;
+                  }
       /*List Normal*/   
-            #lfb_bootstraped.lfb_bootstraped .div-box-product li {
+            .div-box-product li {
                   font-size: 18px ;
                   font-weight: normal;
                   line-height: 20px ;
@@ -132,7 +132,7 @@
                   word-wrap: break-word;
             }
       /*Paragraph Normal*/   
-            #lfb_bootstraped.lfb_bootstraped .div-box-product p {
+            .div-box-product p {
                  /*background: transparent;
                  */
                   box-sizing: border-box;
@@ -149,121 +149,121 @@
             }
 /*Hover Settings*/
       /*Div Hover*/      
-            #lfb_bootstraped.lfb_bootstraped .div-box-product:hover {
+            .div-box-product:hover {
                   transition: all 600ms ease-in-out;
                   transform: scale(1.08);
                   background-color: var(--column-hover);
             }
       /*Image Hover*/      
-            #lfb_bootstraped.lfb_bootstraped .div-box-product:hover img {
+            .div-box-product:hover img {
                   transition: all 600ms ease-in-out;
                   filter: grayscale(0%);
                   -webkit-filter: grayscale(0%);
                   -moz-filter: grayscale(0%);
             }
       /*Price Hover*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product:hover .price {
+            .div-box-product:hover .price {
                   transition: all 600ms ease-in-out;
                   background: var(--price-bg-hover);
                   color: var(--price-font-hover);
             }
-            #lfb_bootstraped.lfb_bootstraped .div-box-product:hover .price-lost {
+            .div-box-product:hover .price {
                   transition: all 600ms ease-in-out;
                   background: var(--price-bg-hover);
                   color: var(--price-font-hover);
             }
       /*Text Hover*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product:hover h2, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product:hover li, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product:hover p {
+            .div-box-product:hover h2, 
+            .div-box-product:hover li, 
+            .div-box-product:hover p {
                   transition: all 600ms ease-in-out;
                   color: var(--font-hover);
             }
 /*Selected*/
       /* Div Selected*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.selected {
+            .div-box-product.selected {
                   transition: all 600ms ease-in-out;
                   transform: scale(1.03);
                   background-color: var(--column-selected);
             }
       /*Image Selected*/       
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.selected img {
+            .div-box-product.selected img {
                   transition: all 600ms ease-in-out;
                   filter: grayscale(0%);
                   -webkit-filter: grayscale(0%);
                   -moz-filter: grayscale(0%);
             }
       /*Price Selected*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.selected .price {
+            .div-box-product.selected .price {
                   transition: all 600ms ease-in-out;
                   background: var(--price-bg-selected);
                   color: var(--price-font-selected);
             }
       /*Text Selected*/       
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.selected h2, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.selected li, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.selected p {
+            .div-box-product.selected h2, 
+            .div-box-product.selected li, 
+            .div-box-product.selected p {
                   transition: all 800ms ease-in-out;
                   color: var(--font-selected);
             }
 
 /*Greyed Out Unselected Settings*/
      /*Image Settings Grey Product*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product img {
+            .div-box-product.grey-product img {
                   transition: all 600ms ease-in-out;
                   opacity: 0.5;
             }
       /*Price Settings Grey Product*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product .price {
+            .div-box-product.grey-product .price {
                 transition: all 600ms ease-in-out;
                 color: var(--font-checked);
                 background-color: #00000005;
            }
       /*Text Settings Grey Product*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product h2, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product li, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product p {
+            .div-box-product.grey-product h2, 
+            .div-box-product.grey-product li, 
+            .div-box-product.grey-product p {
                   transition: all 600ms ease-in-out;
                   color: var(--font-checked);
             }
 
 /*Greyed Out Hover Settings*/           
       /*Image Thumbnail Greyed Out Settings*/
-           #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product:hover img {
+           .div-box-product.grey-product:hover img {
             transition: all 600ms ease-in-out;
             opacity: 100%;
             }
      /*Price Settings Grey Product*/
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product:hover .price {
+            .div-box-product.grey-product:hover .price {
                   transition: all 600ms ease-in-out;
                   color: var(--price-font-hover);
                   background: var(--price-font-selected);
             }
       /*Text Settings Grey Product*/       
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product:hover h2, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product:hover li, 
-            #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product:hover p {
+            .div-box-product.grey-product:hover h2, 
+            .div-box-product.grey-product:hover li, 
+            .div-box-product.grey-product:hover p {
                   transition: all 800ms ease-in-out;
                   color: var(--font-hover);
             }
 /*Radio Button*/
 
-            #lfb_bootstraped.lfb_bootstraped input[type="radio"] {
+            input[type="radio"] {
                   display: none;
             }
 /*Responsiveness @Media Settings*/
             @media (max-width: 1024px) {
-            #lfb_bootstraped.lfb_bootstraped .product_column {
+            .product_column {
                   grid-template-columns: repeat(2, 1fr);
             }
             }
             @media (max-width: 768px) {
-            #lfb_bootstraped.lfb_bootstraped .product_column {
+            .product_column {
                   grid-template-columns: repeat(2, 1fr);
             }
             }
             @media (max-width: 576px) {
-            #lfb_bootstraped.lfb_bootstraped .product_column {
+            .product_column {
                   grid-template-columns: 1fr;
             }
             }

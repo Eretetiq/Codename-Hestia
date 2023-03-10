@@ -2,7 +2,7 @@
 function display_products($atts) {
   // Extract shortcode attributes
   $atts = shortcode_atts([
-      'Featured' => 'yes', // Set default value to 'yes'
+      'featured' => 'yes', // Set default value to 'yes'
       'Type' => '',
       'Brand' => 'trane',
       'Rating' => '',
@@ -137,7 +137,7 @@ if (!empty($meta_query)) {
       if (isset($product['price']) && !empty($product['price'])) {
         $output .= '<div class="price" style="font-weight:bold;">$' . $product['price'] . '</div>';
       } else {
-        $output .= '<div class="price" style="font-weight:bold;">Price not available</div>';
+        $output .= '<div class="price-lost" style="font-weight:bold;">Price not available</div>';
       }
       $output .= '<p>' . $product['excerpt'] . '</p>';
       $output .= '<input type="radio" name="product" value="' . $product['title'] . '" onclick="updateProductTitle(\'' . $product['title'] . '\', \'' . $product['price'] . '\')"></input>';
@@ -157,5 +157,3 @@ if (!empty($meta_query)) {
   // Return the output
   return $output;
 }
-
-
