@@ -32,7 +32,6 @@
   }
   add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 
-include_once('updater.php');
 require_once( 'display-split-products.php' );
 require_once( 'display-furnace-products.php' );
 require_once( 'display-package-products.php' );
@@ -42,10 +41,9 @@ add_shortcode('display-split-products', 'display_split_products');
 add_shortcode('display-package-products', 'display_package_products');
 
 
-//[display-furnace-products rating='80' tier='1'] - Furnace Metal Tiers 1-6
-//[display-furnace-products rating='90' tier='1'] - Furnace PVC Tiers 1-6
-//[display-split-products rating='80' tier='1'] - Split Metal Tiers 1-6
-//[display-split-products rating='90' tier='1'] - Split PVC Tiers 1-6
-//[display-package-products source='Gas Electric' tier='1'] - Packaged Natural Gas Tiers 1-6
-//[display-package-products source='Heat Pump' tier='1'] - Packaged Electric Tiers 1-6
- 
+//[display-furnace-products rating='80' tier='1'] - Metal Tiers 1-6
+//[display-furnace-products rating='90' tier='1'] - PVC Tiers 1-6
+//[display-split-products rating='80' tier='1'] - Metal Tiers 1-6
+//[display-split-products rating='90' tier='1'] - PVC Tiers 1-6
+//[display-package-products source='Gas Electric' tier='1'] - Natural Gas Tiers 1-6
+//[display-package-products source='Heat Pump' tier='1'] - Electric Tiers 1-6
