@@ -1,40 +1,28 @@
-# Codename-Hestia
-This helps us search through a ton of different HVAC products from different brands. This is really helpful because it can be overwhelming to sift through all those products manually. Instead, we can use this function to filter the products by different types (like furnaces, air conditioners, heat pumps, and splits) and other options like materials (metal or PVC) and gas vs. electric.
+# Release
+This release provides a WordPress shortcode function written in PHP that displays HVAC (Heating, Ventilation, and Air Conditioning) products based on specified filters. The function can display various types of HVAC products such as furnaces, air conditioners, heat pumps, and splits, and can filter products based on attributes like brand, rating, and tier. The function also sorts the products by price and can be used to display only featured products.
 
-The function also sorts the products by price, which is great because it makes it easier to find products that fit within a certain budget. This is really helpful when you consider that there are thousands of different products out there, each with their own set of options and prices.
+# Changes Made in this Release
+This update expands upon the functionality of the previous release by adding support for more types of HVAC products and more options for filtering and sorting. The display_products() function is written in PHP and is used to generate and display HVAC products. The function accepts an array of shortcode attributes as a parameter, which determines what type of products to display. These attributes can be overridden by URL parameters, if present.
 
-Now, let's talk about the math. If we have four different types of products (furnaces, air conditioners, heat pumps, and splits) with two variables each (metal or PVC), and an additional two options (gas or electric), and each of these products have six different prices, that's a lot of possibilities to consider! Here's how we can break it down:
+In addition to displaying HVAC products, this release also includes a JavaScript function named updateProductTitle(title, price) that is called when a user clicks on a radio button to select a product. The function takes two arguments: title and price, which represent the title and price of the selected product. The function logs a message to the console indicating that it has been called and the values of its arguments. The function then selects the elements on the page that have the CSS classes "product_title" and "product_price" using the querySelector() method. If these elements are found, the function sets their values to the title and price arguments. If these elements are not found, an error message is logged to the console.
 
-There are 4 types of products, which means we have 4 different arrays to work with.
-Each array has 2 variables (metal or PVC), so we can use a boolean value (true or false) to represent each option. This means that we have 2^2 (or 4) possible combinations for each array.
-Additionally, we have 2 other options (gas or electric), which means we can add another dimension to each array. This gives us a total of 2^3 (or 8) possible combinations for each array.
-Finally, we have 6 different prices for each product, so we can assign each product a price value.
-When you put it all together, we end up with a lot of different possibilities to consider! However, by using the display_products() function, we can easily filter and sort through all those possibilities to find the product that meets our specific needs.
+Another function named updateSelectedClass(event) is called when a user clicks on a radio button to select a product. This function removes the "selected" class from all product columns on the page, and then adds the "selected" class to the product column that contains the selected radio button. This allows the selected product to be visually highlighted on the page.
 
+# Technical Details
+The shortcode function is written in PHP and displays HVAC products based on specified filters. The shortcode can be added to a page or post and it will display a list of HVAC products. The function takes several attributes as inputs such as "type", "brand", "rating", and "tier". These attributes are used to filter the products that will be displayed.
 
+The function first sets default values for the shortcode attributes using the shortcode_atts() function. Then, it sets up the query arguments to retrieve products of the specified type and brand, and with a specified rating and tier (if specified). The products are also filtered based on whether they are marked as "featured". The results of the query are stored in a WP_Query object.
 
-This is a WordPress shortcode function written in PHP that displays furnace products based on some filters specified in the shortcode attributes.
-The display_products() function is written in PHP and is used to generate and display HVAC (Heating, Ventilation, and Air Conditioning) products.
+The function then loops through the query results and extracts the product information (title, excerpt, price, and thumbnail) into an array. The products are sorted based on price and displayed in a list with a radio button next to each product. The radio button allows the user to select a product.
 
-The function accepts an array of shortcode attributes as a parameter, which determines what type of products to display. These attributes can be overridden by URL parameters, if present.
+If no products are found, a message is displayed saying "These are not the products you are looking for." and a logo.
 
-The function then constructs a WordPress query to retrieve up to four posts of the "hvac-product" custom post type that match the query criteria. It sorts the retrieved posts by price, generates HTML output for each post (including the product title, price, excerpt, and thumbnail), and concatenates the generated HTML output into a single string, which is returned as the final output.
+The code uses the querySelector method to select the elements on the page that have the CSS classes "product_title" and "product_price". The function then checks if the selected elements exist and sets their values to the arguments passed to the function. If the elements are not found, an error message is logged to the console.
 
-The shortcode attributes that can be used with this function are:
+The updateProductTitle() function is called when a user clicks on a radio button to select a product. The function takes two arguments: title and price, which represent the title and price of the selected product. The function logs a message to the console indicating that it has been called and the values of its arguments. The function then selects the elements on the page that have the CSS classes "product_title" and "product_price" using the querySelector() method. If these elements are found, the function sets their values to the title and price arguments. If these elements are not found, an error message is logged to the console.
 
-Featured: A boolean value (either "yes" or "no") indicating whether to display only featured products. If not specified, the default value is "yes".
-Type: The product type to display (e.g., "furnace", "air-conditioner", etc.). If not specified, all types of products are displayed.
-Brand: The product manufacturer to display (e.g., "trane", "carrier", etc.). If not specified, the default value is "trane".
-Rating: The minimum product rating to display (e.g., "4.5", "5", etc.). If not specified, all products are displayed.
-Tier: The price tier to use for products that have tiered pricing (e.g., "1", "2", etc.). If not specified, the default value is an empty string.
-Source: The packaged unit type to display (e.g., "gas", "electric", etc.). If not specified, all products are displayed.
-Split: The type of split system to display (e.g., "single-stage", "dual-stage", etc.). If not specified, all products are displayed.
-The display_products() function is typically used in WordPress environments to display HVAC products on a website.
+The updateSelectedClass() function is also called when a user clicks on a radio button to select a product. This function removes the "selected" class from all product columns on the page, and then adds the "selected" class to the product column that contains the selected radio button. This allows the selected product to be visually highlighted on the page.
 
-This is a JavaScript function named updateProductTitle(title, price) that is called when a user clicks on a radio button to select a product. The function takes two arguments: title and price, which represent the title and price of the selected product. The function logs a message to the console indicating that it has been called and the values of its arguments.
+This release also fixes some issues that were present in the previous release, such as broken CSS and broken price pass-through. The variable equations have been re-established, and the buttons have begun to be used.
 
-The function then selects the elements on the page that have the CSS classes "product_title" and "product_price" using the querySelector() method. If these elements are found, the function sets their values to the title and price arguments. If these elements are not found, an error message is logged to the console.
-
-There is also another function named updateSelectedClass(event) that is called when a user clicks on a radio button to select a product. This function removes the "selected" class from all product columns on the page, and then adds the "selected" class to the product column that contains the selected radio button. This allows the selected product to be visually highlighted on the page.
-
-Finally, there is a listener attached to each radio button on the page that listens for a "click" event, and when triggered, calls the updateSelectedClass(event) function to update the visual display of the selected product.
+Overall, this release provides an improved and more flexible solution for displaying HVAC products on a website, with support for various types of products and advanced filtering and sorting options.
