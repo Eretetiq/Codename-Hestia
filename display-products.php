@@ -4,7 +4,7 @@ function display_products($atts) {
   $atts = shortcode_atts([
       'featured' => 'yes', // Set default value to 'yes'
       'Type' => '',
-      'Brand' => 'trane',
+      'Brand' => '',
       'Rating' => '',
       'Tier' => '',
       'Source' => '',
@@ -18,25 +18,24 @@ function display_products($atts) {
   $SourceValue = isset($_GET['Source']) ? $_GET['Source'] : '';
   $SplitValue = isset($_GET['Split']) ? $_GET['Split'] : '';
 // Override shortcode attributes with URL parameters, if present
-if (isset($_GET['Brand'])) {
+if (isset($_GET['Brand']) && !empty($_GET['Brand'])) {
   $atts['Brand'] = $_GET['Brand'];
 }
-if (isset($_GET['Type'])) {
+if (isset($_GET['Type']) && !empty($_GET['Type'])) {
   $atts['Type'] = $_GET['Type'];
 }
-if (isset($_GET['Rating'])) {
+if (isset($_GET['Rating']) && !empty($_GET['Rating'])) {
   $atts['Rating'] = $_GET['Rating'];
 }
-if (isset($_GET['Tier'])) {
+if (isset($_GET['Tier']) && !empty($_GET['Tier'])) {
   $atts['Tier'] = $_GET['Tier'];
 }
-if (isset($_GET['Source'])) {
+if (isset($_GET['Source']) && !empty($_GET['Source'])) {
   $atts['Source'] = $_GET['Source'];
 }
-if (isset($_GET['Split'])) {
+if (isset($_GET['Split']) && !empty($_GET['Split'])) {
   $atts['Split'] = $_GET['Split'];
 }
-
 // Set up query arguments
 $query_args = [
   'post_type' => 'hvac-product',
@@ -47,12 +46,19 @@ $query_args = [
 
 // Build the tax_query array based on the non-empty attributes and GET parameters
 $tax_query = [];
-if (!empty($atts['type']) || !empty($TypeValue)) {
+if (!empty($atts['Type']) || !empty($TypeValue)) {
   $tax_query[] = [
       'taxonomy' => 'product_type',
       'field' => 'slug',
       'terms' => !empty($atts['Type']) ? $atts['Type'] : $TypeValue,
   ];
+}
+else {
+  $output .= '<link rel="stylesheet" type="text/css" href="' . plugin_dir_url(__FILE__) . 'assets/css/404.css">';
+    ob_start();
+    include '404-block.html'; // Capture the HTML output of 404-block.html
+    $output .= ob_get_clean(); // Append the captured HTML output to the $output variable
+    return $output;
 }
 if (!empty($atts['Brand'])) {
   $tax_query[] = [
@@ -64,7 +70,13 @@ if (!empty($atts['Brand'])) {
 $query_args['tax_query'] = $tax_query;
 
 // Build the meta_query array based on the non-empty attributes and GET parameters
-$meta_query = [];
+$meta_query = [
+  [
+    'key' => 'hvac_product_featured',
+    'value' => 'yes',
+  ],
+
+];
 if (!empty($atts['Rating']) || !empty($RatingValue)) {
   $meta_query[] = [
       'key' => 'hvac_product_rating',
@@ -89,8 +101,8 @@ if (!empty($atts['Split']) || !empty($SplitValue)) {
 if (!empty($meta_query)) {
   $query_args['meta_query'] = $meta_query;
 }
-//var_dump($atts); // Dump the values of the $atts variable
-//var_dump($query_args); // Dump the values of the $query_args variable
+var_dump($atts); // Dump the values of the $atts variable
+var_dump($query_args); // Dump the values of the $query_args variable
   // Run the query
   $product_query = new WP_Query($query_args);
   // Declare the $products array and output variable

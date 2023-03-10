@@ -21,6 +21,21 @@
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
+/*
+  ** Shortcode:
+      ** [display-products]
+
+  ** $GET Values
+      ** FOR CONTACT
+        ** First, Last, Phone, Email, Zip
+
+      ** FOR INFORMATION
+        ** Site, Home,  Systems, T Furnace-Source, Split-Source
+
+      ** FOR CONDITIONALS
+        ** Tier, Type, Rating, Source, Split
+*/
+
 //Just for security measures
  if ( ! defined( 'ABSPATH' ) ) {
     die;
@@ -39,6 +54,6 @@ add_shortcode('display-products', 'display_products');
 
 
 
-//[display-furnace-products rating='80' tier='1'] - Furnace Metal Tiers 1-6
+
 
  
