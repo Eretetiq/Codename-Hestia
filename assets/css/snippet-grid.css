@@ -17,9 +17,11 @@
                   --font-checked:                     #d6d6d6;
             }
 /*Label*/
-            #lfb_bootstraped.lfb_bootstraped .label {
+            #lfb_bootstraped.lfb_bootstraped label {
                   cursor: pointer;
+				  height: 99%; /**Height Adjustment DR*/
             }
+
 /*Grid*/
             Grid Setting #lfb_bootstraped.lfb_bootstraped .product_column > * {
                   display: grid;
@@ -45,6 +47,7 @@
                   transition: all 600ms ease-in-out;
                   transform: scale(1.00);
                   background-color: transparent;
+				  height: inherit; /*Equal Height DR*/
             }
       /*Image Thumbnail Normal*/
             #lfb_bootstraped.lfb_bootstraped .product_column img {
@@ -153,6 +156,7 @@
                   transition: all 600ms ease-in-out;
                   transform: scale(1.08);
                   background-color: var(--column-hover);
+				  height: inherit; /*Equal Height DR*/
             }
       /*Image Hover*/      
             #lfb_bootstraped.lfb_bootstraped .div-box-product:hover img {
