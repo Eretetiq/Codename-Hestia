@@ -49,11 +49,6 @@
   add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 
 require_once( 'display-products.php' );
+require_once( 'dashboard.php' );
 
-add_shortcode('display-products', 'display_products');
-
-
-
-
-
- 
+add_shortcode('display-products', 'display_products'); 

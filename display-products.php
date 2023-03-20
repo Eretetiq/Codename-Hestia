@@ -1,16 +1,19 @@
 <?php
 function display_products($atts) {
-  // Extract shortcode attributes
-  $atts = shortcode_atts([
-      'featured' => 'yes', // Set default value to 'yes'
-      'Type' => '',
-      'Brand' => '',
-      'Rating' => '',
-      'Tier' => '',
-      'Source' => '',
-      'Split' => '',
-  ], $atts);
+  // Get the selected default brand from the WordPress database
+  $default_brand = get_option( 'my-plugin-default-brand' );
 
+  // Set the default value for the 'Brand' attribute to the selected default brand
+  $atts = shortcode_atts([
+    'featured' => 'yes',
+    'Type' => '',
+    'Brand' => $default_brand, // Use the selected default brand
+    'Rating' => '',
+    'Tier' => '',
+    'Source' => '',
+    'Split' => '',
+  ], $atts);
+  
   // Get the values from the URL
   $TypeValue = isset($_GET['Type']) ? $_GET['Type'] : '';
   $RatingValue = isset($_GET['Rating']) ? $_GET['Rating'] : '';
