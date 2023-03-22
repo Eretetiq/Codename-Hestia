@@ -255,6 +255,20 @@
             #lfb_bootstraped.lfb_bootstraped input[type="radio"] {
                   display: none;
             }
+
+/*311 Call out*/
+#lfb_bootstraped.lfb_bootstraped #three-eleven {
+      visibility: hidden;
+      position: relative;
+    }
+    #lfb_bootstraped.lfb_bootstraped #three-eleven:after {
+      visibility: visible;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "This text replaces the original.";
+    }
+
 /*Responsiveness @Media Settings*/
             @media (max-width: 1024px) {
             #lfb_bootstraped.lfb_bootstraped .product_column {

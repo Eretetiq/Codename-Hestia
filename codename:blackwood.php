@@ -50,5 +50,9 @@
 
 require_once( 'display-products.php' );
 require_once( 'dashboard.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/css-root-options.php' );
+
+
+
 
 add_shortcode('display-products', 'display_products'); 

@@ -104,8 +104,8 @@ if (!empty($atts['Split']) || !empty($SplitValue)) {
 if (!empty($meta_query)) {
   $query_args['meta_query'] = $meta_query;
 }
-var_dump($atts); // Dump the values of the $atts variable
-var_dump($query_args); // Dump the values of the $query_args variable
+//var_dump($atts); // Dump the values of the $atts variable
+//var_dump($query_args); // Dump the values of the $query_args variable
   // Run the query
   $product_query = new WP_Query($query_args);
   // Declare the $products array and output variable
@@ -166,7 +166,6 @@ var_dump($query_args); // Dump the values of the $query_args variable
     include '404-block.html'; // Capture the HTML output of 404-block.html
     $output .= ob_get_clean(); // Append the captured HTML output to the $output variable
   }
-  $output .= '</div>';
   wp_reset_postdata();
 
   // Return the output
