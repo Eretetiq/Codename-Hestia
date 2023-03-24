@@ -45,14 +45,16 @@
     wp_enqueue_style( 'snippet-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/snippet-grid.css' );
     wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
     wp_enqueue_script( 'button-overide', plugin_dir_url( __FILE__ ) . '/assets/js/button-overide.js', array(), '1.0', true );
+    wp_enqueue_script( 'zip-form-validation', plugin_dir_url( __FILE__ ) . '/assets/js/zip-form-validation.js', array('jquery'), '1.0', true );
   }
   add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 
 require_once( 'display-products.php' );
 require_once( 'dashboard.php' );
+require_once( 'zip-validation.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/css-root-options.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/zip-validation-array.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/zip-validation-submit.php' );
 
-
-
-
-add_shortcode('display-products', 'display_products'); 
+add_shortcode('display-products', 'display_products');
+add_shortcode( 'zip-form', 'zip_form' );
