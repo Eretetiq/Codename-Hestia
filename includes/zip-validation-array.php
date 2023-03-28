@@ -1,9 +1,1 @@
-<?php 
-function validate_input($input) {
-    $valid_numbers = array(12345, 67890, 54321);
-    if (in_array($input, $valid_numbers)) {
-      return true; // Input is valid
-    } else {
-      return false; // Input is not valid
-    }
-  }
+<a href="javascript:" id="lfb_btnNext_700" class="btn btn-wide btn-primary lfb_btn-next " style="display: inline-block;"><span class="fa fa-check"></span>Next<canvas class="lfb_shineCanvas" style="border-radius: 4px;" width="140" height="41"></canvas></a>
