@@ -11,6 +11,11 @@
   function hestia_brand_options_page() {
     include('general-settings.php');
   }
+
+    // Load the Brand Options page
+    function hestia_zip_codes_page() {
+      include('zip-codes.php');
+    }
   
   // Adds the menu pages
   function hestia_add_menu_pages() {
@@ -29,6 +34,14 @@
       'manage_options',
       'hestia-color-options',
       'hestia_color_options_page'
+    );
+    add_submenu_page(
+      'hestia-settings',
+      'Zip Codes',
+      'Zip Codes',
+      'manage_options',
+      'hestia-zip-code-options',
+      'hestia_zip_codes_page'
     );
   }
   

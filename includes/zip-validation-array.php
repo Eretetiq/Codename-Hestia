@@ -1,1 +1,16 @@
-<a href="javascript:" id="lfb_btnNext_700" class="btn btn-wide btn-primary lfb_btn-next " style="display: inline-block;"><span class="fa fa-check"></span>Next<canvas class="lfb_shineCanvas" style="border-radius: 4px;" width="140" height="41"></canvas></a>
+<?php 
+function validate_input($input, $csv_file_path) {
+    $valid_numbers = array();
+    if (($handle = fopen($csv_file_path, "r")) !== false) {
+        while (($data = fgetcsv($handle, 1000, ",")) !== false) {
+            $valid_numbers[] = $data[0];
+        }
+        fclose($handle);
+    }
+
+    if (in_array($input, $valid_numbers)) {
+        return true; // Input is valid
+    } else {
+        return false; // Input is not valid
+    }
+}

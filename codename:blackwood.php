@@ -61,4 +61,5 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/zip-validation-submit.php'
 
 
 add_shortcode('display-products', 'display_products');
-add_shortcode( 'zip-form', 'zip_form' );
+add_shortcode( 'zip-check-form', 'zip_check_form' );
+

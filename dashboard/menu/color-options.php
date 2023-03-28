@@ -1,5 +1,6 @@
 <div class="wrap">
-  <h1> BxB Conditional Pull Settings</h1>
+  <h1> Color Settings </h1>
+  <p>Form and Pull Colors</p>
   <form method="post" action="options.php">
     <?php
     settings_fields( 'hestia-settings' );

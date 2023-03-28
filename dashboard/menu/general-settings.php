@@ -1,5 +1,6 @@
 <div class="wrap">
   <h1> BxB Conditional Pull Settings</h1>
+  <p>General Plugin Settings</p>
   <form method="post" action="options.php">
     <?php
     settings_fields( 'hestia-settings' );
