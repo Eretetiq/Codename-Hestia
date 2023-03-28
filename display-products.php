@@ -1,7 +1,7 @@
 <?php
 function display_products($atts) {
   // Get the selected default brand from the WordPress database
-  $default_brand = get_option( 'my-plugin-default-brand' );
+  $default_brand = get_option( 'hestia-default-brand' );
 
   // Set the default value for the 'Brand' attribute to the selected default brand
   $atts = shortcode_atts([
