@@ -163,7 +163,8 @@ if (!empty($meta_query)) {
   } else {
     $output .= '<link rel="stylesheet" type="text/css" href="' . plugin_dir_url(__FILE__) . 'assets/css/404.css">';
     ob_start();
-    include '404-block.html'; // Capture the HTML output of 404-block.html
+    //include '404-block.html'; // Capture the HTML output of 404-block.html
+    include plugins_url( 'assets/html/404-product.html', __FILE__ );
     $output .= ob_get_clean(); // Append the captured HTML output to the $output variable
   }
   wp_reset_postdata();
