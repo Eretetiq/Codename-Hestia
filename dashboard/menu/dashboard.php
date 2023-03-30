@@ -21,7 +21,7 @@
   function hestia_add_menu_pages() {
     add_menu_page(
       'BxB Conditional Pull Settings',
-      'BxB Settings',
+      'Hestia Settings',
       'manage_options',
       'hestia-settings',
       'hestia_brand_options_page'

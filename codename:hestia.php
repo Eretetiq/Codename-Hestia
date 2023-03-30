@@ -24,7 +24,8 @@
 /*
   ** Shortcode:
       ** [display-products]
-
+      ** [sac-check]
+      ** [sac-check-manual]
   ** $GET Values
       ** FOR CONTACT
         ** First, Last, Phone, Email, Zip
@@ -41,21 +42,26 @@
     die;
   }
   function hestia_enqueue_styles_and_scripts() {
+    //CSS
     wp_enqueue_style( 'on-site-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/on-site-grid.css' );
     wp_enqueue_style( 'snippet-grid-styles', plugin_dir_url( __FILE__ ) . 'assets/css/snippet-grid.css' );
-    wp_enqueue_style( 'dashboard-styles', plugin_dir_url( __FILE__ ) . 'assets/css/dashboard.css' );
+    wp_enqueue_style( 'sac-styles', plugin_dir_url( __FILE__ ) . 'assets/css/sac.css' );
+    //JavaScripts
     wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
     wp_enqueue_script( 'button-overide', plugin_dir_url( __FILE__ ) . '/assets/js/button-overide.js', array(), '1.0', true );
-}
+    wp_enqueue_script( 'ajax-script', admin_url( 'admin-ajax.php' ), array( 'jquery' ) );
+  }
 add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 
 //require_once( 'display-products.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/display-products.php' );
-require_once( plugin_dir_path( __FILE__ ) . 'dashboard/settings/css-root-options.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'dashboard/menu/dashboard.php' );
-require_once( plugin_dir_path( __FILE__ ) . 'dashboard/settings/css-root-options.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/sac/sac-check.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/sac/sac-check-manual.php' );
 
 
 
 add_shortcode('display-products', 'display_products');
+add_shortcode( 'sac-check', 'sac_check' );
+//add_shortcode( 'sac-check-manual', 'sac_check_manual' );
 
