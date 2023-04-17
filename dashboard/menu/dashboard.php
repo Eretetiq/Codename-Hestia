@@ -1,12 +1,6 @@
 <?php
 // Menu Entries
 
-
-  // Load the Color Options page
-  function hestia_color_options_page() {
-    include('color-options.php');
-  }
-  
   // Load the Brand Options page
   function hestia_brand_options_page() {
     include('general-settings.php');
@@ -16,6 +10,11 @@
     function hestia_zip_codes_page() {
       include('zip-codes.php');
     }
+
+        // Load the 404 Messages options page
+        function hestia_404_messages_page() {
+          include('error-pages.php');
+        }
   
   // Adds the menu pages
   function hestia_add_menu_pages() {
@@ -26,15 +25,7 @@
       'hestia-settings',
       'hestia_brand_options_page'
     );
-  
-    add_submenu_page(
-      'hestia-settings',
-      'Color Options',
-      'Color Options',
-      'manage_options',
-      'hestia-color-options',
-      'hestia_color_options_page'
-    );
+
     add_submenu_page(
       'hestia-settings',
       'Zip Codes',
@@ -42,6 +33,15 @@
       'manage_options',
       'hestia-zip-code-options',
       'hestia_zip_codes_page'
+    );
+
+    add_submenu_page(
+      'hestia-settings',
+      '404 Messages',
+      '404 Messages',
+      'manage_options',
+      'hestia-404-messages-options',
+      'hestia_404_messages_page'
     );
   }
   
