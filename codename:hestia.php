@@ -21,22 +21,6 @@
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
-/*
-  ** Shortcode:
-      ** [display-products]
-      ** [sac-check]
-      ** [sac-check-manual]
-  ** $GET Values
-      ** FOR CONTACT
-        ** First, Last, Phone, Email, Zip
-
-      ** FOR INFORMATION
-        ** Site, Home,  Systems, T Furnace-Source, Split-Source
-
-      ** FOR CONDITIONALS
-        ** Tier, Type, Rating, Source, Split
-*/
-
 //Just for security measures
  if ( ! defined( 'ABSPATH' ) ) {
     die;
@@ -53,13 +37,23 @@
   }
 add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 
-//require_once( 'display-products.php' );
+// Main Function File
 require_once( plugin_dir_path( __FILE__ ) . 'includes/display-products.php' );
+
+// Main Function Modulized
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/default-brand.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/default-attributes.php');
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/get-url-values.php');
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/override-attributes.php');
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/query-arguments.php');
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/product-query.php');
+
+// Dashboard
 require_once( plugin_dir_path( __FILE__ ) . 'dashboard/menu/dashboard.php' );
+
+// Service Area Check
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/sac/sac-check.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/sac/sac-check-manual.php' );
-
-
 
 add_shortcode('display-products', 'display_products');
 add_shortcode( 'sac-check', 'sac_check' );
