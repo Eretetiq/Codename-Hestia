@@ -22,7 +22,6 @@ $atts = override_attributes($atts, $url_values);
  // Set up query arguments
 $query_args = setup_query_args($atts, $url_values);
 
-
  // Perform the product query
  $product_query = perform_product_query($query_args, $atts, $TierValue, $SplitValue, $TypeValue, $SplitSource, $PackagedSource);
 
