@@ -20,7 +20,8 @@
             #lfb_bootstraped.lfb_bootstraped label {
                   cursor: pointer;
 				  height: 99%; /**Height Adjustment DR*/
-            }
+                  padding-top:30px;
+                        }
 
 /*Grid*/
             Grid Setting #lfb_bootstraped.lfb_bootstraped .product_column > * {
@@ -35,10 +36,10 @@
                   background-color:transparent;
                   display: grid ;
                   grid-template-columns: repeat(4, 1fr);
-                  grid-gap: 20px;
+                  grid-gap: 10px;
                   grid-column-gap: 15px;
                   grid-row-gap: 15px;
-                  padding: 10px,10px,10px,10px;
+                  padding: 100px,10px,10px,10px;
                   transition: all 600ms ease-in-out;
                   transform: scale(1.00);
             }

@@ -11,8 +11,8 @@
  * Plugin Name:       Hestia: BxB Product Pull
  * Plugin URI:        https://github.com/badwolfvi/blackwood-a24-plugin
  * Description:       The plugin enables an HVAC website to pull products from a custom post type called "hvac-product" in WordPress, based on certain parameters such as product type, manufacturer, rating and price tier. 
- * Version:           21.0.1
- * Version Name:      War
+ * Version:           25.0.10
+ * Version Name:      Acheron
  * Requires at least: 5.7.28
  * Requires PHP:      6.1.9
  * Author:            Blackwood

@@ -11,7 +11,6 @@ $RatingValue = $url_values['Rating'];
 $TierValue = $url_values['Tier'];
 $SourceValue = $url_values['Source'];
 $SplitValue = $url_values['Split'];
-
 $SplitSource = $url_values['SplitSource'];
 $FurnaceSource = $url_values['FurnaceSource'];
 $PackagedSource = $url_values['PackagedSource'];
