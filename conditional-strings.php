@@ -20,21 +20,21 @@
             Home
             Systems
       ** FOR CONDITIONALS
-            Tier
+            **Tier
                 1
                 2
                 3
                 4
                 5
             Type
-                Gas-Furnace
-                Air-Conditioner
-                Packaged-Unit
-                Heat-Pump
-            Rating
+                Gas Furnace
+                Air Conditioner
+                Packaged Unit
+                Heat Pump
+            **Rating
                80
                90
-            Split
+            **Split
                 Yes
                 Or it will not be filled In
             Furnace-Source
@@ -48,4 +48,3 @@
                 Electric (To be used with Air Condtioner,)
                 Gas Heat (To be used with Packaged Unit)
                 Electric Heat (To be used with Packaged Unit)
-*/
