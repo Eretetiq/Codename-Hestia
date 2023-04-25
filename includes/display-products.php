@@ -16,11 +16,17 @@ $PackagedSource = $url_values['PackagedSource'];
  // Override shortcode attributes with URL parameters, if present
 $atts = override_attributes($atts, $url_values);
 // Error Logging for the Array
-    //var_dump($atts); // Dump the values of the $atts variable
+    var_dump($atts); // Dump the values of the $atts variable
  // Set up query arguments
 $query_args = setup_query_args($atts, $url_values);
  // Perform the product query
  $product_query = perform_product_query($query_args, $atts, $TierValue, $SplitValue, $TypeValue, $SplitSource, $PackagedSource);
- // Return the generated HTML output
-return $product_query;
+
+if (!empty($product_query)) {
+  // Return the generated HTML output
+  return $product_query;
+}
+else {
+  return display_404_error();
+}
 }
