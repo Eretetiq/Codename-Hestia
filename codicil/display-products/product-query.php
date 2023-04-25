@@ -78,12 +78,13 @@ function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $Typ
       $output .= '</label>';
     }
     $output .= '</div>';
-  } else {
-    $output .= '<link rel="stylesheet" type="text/css" href="' . plugin_dir_url(__FILE__) . 'assets/css/404.css">';
-    ob_start();
-    include plugins_url( 'assets/html/404-product.html', __FILE__ );
-    $output .= ob_get_clean(); // Append the captured HTML output to the $output variable
   }
+  // else {
+    //$output .= '<link rel="stylesheet" type="text/css" href="' . plugin_dir_url(__FILE__) . 'assets/css/404.css">';
+    //ob_start();
+   // require_once( dirname( __FILE__ ) . '/../assets/html/404-product.html' );
+    //$output .= ob_get_clean(); // Append the captured HTML output to the $output variable
+ // }
   wp_reset_postdata();
 
   return $output;

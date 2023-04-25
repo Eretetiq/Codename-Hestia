@@ -1,7 +1,9 @@
 <?php
+// This function overrides the default shortcode attributes with values from the URL query parameters
 function override_attributes($atts) {
-if (isset($_GET['Brand']) && !empty($_GET['Brand'])) {
-  $atts['Brand'] = $_GET['Brand'];
+  // This code checks if each query parameter is set and not empty, and if so, sets the corresponding attribute to its value
+  if (isset($_GET['Brand']) && !empty($_GET['Brand'])) {
+    $atts['Brand'] = $_GET['Brand'];
 }
 if (isset($_GET['Type']) && !empty($_GET['Type'])) {
   $atts['Type'] = $_GET['Type'];
@@ -24,5 +26,5 @@ if (isset($_GET['FurnaceSource']) && !empty($_GET['FurnaceSource'])) {
 if (isset($_GET['PackagedSource']) && !empty($_GET['PackagedSource'])) {
   $atts['PackagedSource'] = $_GET['PackagedSource'];
 }
-return $atts;
+return $atts; // This code returns the updated array of shortcode attributes
 }

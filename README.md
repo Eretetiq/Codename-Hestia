@@ -1,40 +1,110 @@
-# Changes Made in this Release
-One of the most significant changes is the addition of the Split Products feature to the shortcode portion of the plugin. This new feature allows for more flexibility in displaying product information on your site.
+# BxB Product Selector Plugin
 
-We have also made significant improvements to our video functionality, resulting in faster load times and a smoother user experience. In addition, we have added a callout feature that allows you to change the content of the callout from a dashboard, eliminating the need to change content on multiple pages.
+# Last Changelog Entry
 
-To further streamline the plugin, we have created a new dashboard that allows you to easily change basic options like default brand and callout message. We are also working on adding additional functionality for color options, customer information for branding and phone numbers, tracking information for the form, error pages and 404 import/export settings, pages, updates, and zip codes.
+## v25.1.10 - Acheron
+### Added
+Added new code to dynamically append product information to the product title based on customer input
+Added modularity to the main plugin function to make it future-proof and easy to maintain
+Updated variable names in the main function to improve readability
+### Changed
+The way the main function is called. It is now modulized.
+The Git Branch and Pulled to Main
+Naming Conventions
+Variables
+Array Pulls
+### Fixed
+Simplicity and CSS
+Backend Organization of the Site
+### Bugs
+404 Page no Longer Shows
+CSS - On Hover it overlaps with uper content
+404 Custom Message needs to be Acheived
+### Removed
+Unnecessary files and old functions
+### Note
+The new code dynamically appends product information to the product title based on customer input. Depending on both the Type of Equipment and the Heating source, it will append that information to the title of the product. This improves the accuracy and relevance of the product titles for customers. Additionally, the modularity of the main plugin function makes it easier to maintain and update the plugin in the future.
 
-As part of this update, we have also added a manual zip code validation feature that is currently being streamlined to reduce clunkiness and eliminate the need for manual coding. Additionally, we have cleaned up the CSS for our conditional product pull and 404 pages, improving their overall appearance and functionality.
+The HVAC Product Selector Plugin is a WordPress plugin that helps homeowners make informed decisions about HVAC products by pulling information from a products database hand selected of the country's most popular HVAC providers. The information is curated based on answers to questions in a separate form. Based on the answers, the plugin creates an array from our database and presents the top 4 products that match those answers. Our clients can choose what products they want to feature, select pricing, and even the selling points. If they do not want to fill out the selling points, the plugin grabs an excerpt instead.
 
-We hope that these updates will enhance your experience with our plugin and make it even easier for you to manage your site. If you have any questions or feedback, please do not hesitate to contact our support team.
+In addition to product selection, the plugin has a dashboard in the backend with General settings, branding settings, service area selection, and updating options. This allows our clients to easily manage their product offerings and customize their branding.
+# Features
 
-# Changes Made in the Past Release
-This update expands upon the functionality of the previous release by adding support for more types of HVAC products and more options for filtering and sorting. The display_products() function is written in PHP and is used to generate and display HVAC products. The function accepts an array of shortcode attributes as a parameter, which determines what type of products to display. These attributes can be overridden by URL parameters, if present.
+Easy product selection for customers
+Customizable product offerings
+General settings, branding settings, service area selection, and updating options
+Automated product selection based on customer input
+Target Audience
+The target audience for this plugin is homeowners who need help with their HVAC product selection. Our clients are HVAC providers who want to offer their customers an easy way to make informed decisions about their HVAC products.
+# Installation
 
-In addition to displaying HVAC products, this release also includes a JavaScript function named updateProductTitle(title, price) that is called when a user clicks on a radio button to select a product. The function takes two arguments: title and price, which represent the title and price of the selected product. The function logs a message to the console indicating that it has been called and the values of its arguments. The function then selects the elements on the page that have the CSS classes "product_title" and "product_price" using the querySelector() method. If these elements are found, the function sets their values to the title and price arguments. If these elements are not found, an error message is logged to the console.
+Download the plugin ZIP file from the GitHub repository
+Log in to your WordPress website as an administrator
+Go to Plugins > Add New > Upload Plugin
+Upload the ZIP file and click Install Now
+Activate the plugin
+# Usage
 
-Another function named updateSelectedClass(event) is called when a user clicks on a radio button to select a product. This function removes the "selected" class from all product columns on the page, and then adds the "selected" class to the product column that contains the selected radio button. This allows the selected product to be visually highlighted on the page.
+Install and activate the plugin
+Configure the General settings, branding settings, service area selection, and updating options in the plugin dashboard
+Embed the product selector form on your website using the shortcode [display-products] where you would like to display the options.
+Embed the Service  Area Selector where you would like to filter by zip codes by using the shortcode [sac-check].
+Customers can fill out the form and receive product recommendations based on their answers
+# Support
 
-# Release
-This release provides a WordPress shortcode function written in PHP that displays HVAC (Heating, Ventilation, and Air Conditioning) products based on specified filters. The function can display various types of HVAC products such as furnaces, air conditioners, heat pumps, and splits, and can filter products based on attributes like brand, rating, and tier. The function also sorts the products by price and can be used to display only featured products.
+If you have any questions or issues with the HVAC Product Selector Plugin, please contact our support team at dev@bxbmedia.com.
+# Roadmap
 
-# Technical Details
-The shortcode function is written in PHP and displays HVAC products based on specified filters. The shortcode can be added to a page or post and it will display a list of HVAC products. The function takes several attributes as inputs such as "type", "brand", "rating", and "tier". These attributes are used to filter the products that will be displayed.
+## **Daniel and Nick**
 
-The function first sets default values for the shortcode attributes using the shortcode_atts() function. Then, it sets up the query arguments to retrieve products of the specified type and brand, and with a specified rating and tier (if specified). The products are also filtered based on whether they are marked as "featured". The results of the query are stored in a WP_Query object.
+### **Video and Video Thumbnails JPEG**
 
-The function then loops through the query results and extracts the product information (title, excerpt, price, and thumbnail) into an array. The products are sorted based on price and displayed in a list with a radio button next to each product. The radio button allows the user to select a product.
+- [ ]  Daniel and Nick will head this.
+- [ ]  Need to know what kind of graphic we want to use (Single Image for all Videos, or a thumbnail for each)
+- [ ]  Also I faintly recall Nick saying that one of the later options might need another video. Please check again.
 
-If no products are found, a message is displayed saying "These are not the products you are looking for." and a logo.
+### **Last Step**
 
-The code uses the querySelector method to select the elements on the page that have the CSS classes "product_title" and "product_price". The function then checks if the selected elements exist and sets their values to the arguments passed to the function. If the elements are not found, an error message is logged to the console.
+- [ ]  Text needs to be added (already provided just needs to be added).
+- [ ]  See What else needs to be added on to the final step
+- [ ]  (Email confirmation, a message to the [our] client from [their] customer, best time to reach or any final questions before submission)
 
-The updateProductTitle() function is called when a user clicks on a radio button to select a product. The function takes two arguments: title and price, which represent the title and price of the selected product. The function logs a message to the console indicating that it has been called and the values of its arguments. The function then selects the elements on the page that have the CSS classes "product_title" and "product_price" using the querySelector() method. If these elements are found, the function sets their values to the title and price arguments. If these elements are not found, an error message is logged to the console.
+### **Submission Forms**
 
-The updateSelectedClass() function is also called when a user clicks on a radio button to select a product. This function removes the "selected" class from all product columns on the page, and then adds the "selected" class to the product column that contains the selected radio button. This allows the selected product to be visually highlighted on the page.
+- [ ]  Looking over What the Customer and Client sees, nothing has been done to customize this so its set to default settings.
 
-This release also fixes some issues that were present in the previous release, such as broken CSS and broken price pass-through. The variable equations have been re-established, and the buttons have begun to be used.
+## **Development
 
-Overall, this release provides an improved and more flexible solution for displaying HVAC products on a website, with support for various types of products and advanced filtering and sorting options.
+Functional Elements:**
 
+- [ ]  311 Message
+
+### **Design Elements:**
+
+- [ ]  404 pages
+- [ ]  Confirmation pages
+- [ ]  Internal form pages
+- [ ]  stabilizing color from plugin to form
+
+### **Manufactured Icon - Lance and Krystian - Design is working on this**
+
+- [ ]  Would like Line Icons instead of JPG Icons.
+- [ ]  Preferably with a CSS Call that we can easily call and customize the color for (Like we do with social Icons)
+
+### **Full Install**
+- [ ]  Name Split
+- [ ]  ACF Settings
+- [ ]  404 Messages
+- [ ]  Page Creation
+- [ ]  Page Links
+- [ ]  Color Change
+- [ ]  Shortcode Auto Install
+- [ ]  Page Creation
+- [ ]  Customer Info - logo, phone custom 404 (both)
+- [ ]  Add Pages and Link Forms on Installation - Might not be necessary if we create a site per form (which now that its lighter may not be needed. This is a feature that would install all the necessary components without having to do it manually.
+- [ ]  Plugin Pipeline (Git Push and Pull)
+- [ ]  Clean and Re - push
+- [ ]  API and Hosting to other sites
+# License
+  License:           GPL v2 or later
+  License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
