@@ -1,7 +1,5 @@
 # BxB Product Selector Plugin
 
-# Last Changelog Entry
-
 ## v25.1.10 - Acheron
 ### Added
 Added new code to dynamically append product information to the product title based on customer input
@@ -55,43 +53,43 @@ Customers can fill out the form and receive product recommendations based on the
 If you have any questions or issues with the HVAC Product Selector Plugin, please contact our support team at dev@bxbmedia.com.
 # Roadmap
 
-## **Daniel and Nick**
+## Daniel and Nick
 
-### **Video and Video Thumbnails JPEG**
+### Video and Video Thumbnails JPEG
 
 - [ ]  Daniel and Nick will head this.
 - [ ]  Need to know what kind of graphic we want to use (Single Image for all Videos, or a thumbnail for each)
 - [ ]  Also I faintly recall Nick saying that one of the later options might need another video. Please check again.
 
-### **Last Step**
+### Last Step
 
 - [ ]  Text needs to be added (already provided just needs to be added).
 - [ ]  See What else needs to be added on to the final step
 - [ ]  (Email confirmation, a message to the [our] client from [their] customer, best time to reach or any final questions before submission)
 
-### **Submission Forms**
+### Submission Forms
 
 - [ ]  Looking over What the Customer and Client sees, nothing has been done to customize this so its set to default settings.
 
-## **Development
+## Development
 
-Functional Elements:**
+Functional Elements:
 
 - [ ]  311 Message
 
-### **Design Elements:**
+### Design Elements:
 
 - [ ]  404 pages
 - [ ]  Confirmation pages
 - [ ]  Internal form pages
 - [ ]  stabilizing color from plugin to form
 
-### **Manufactured Icon - Lance and Krystian - Design is working on this**
+### Manufactured Icon - Lance and Krystian - Design is working on this
 
 - [ ]  Would like Line Icons instead of JPG Icons.
 - [ ]  Preferably with a CSS Call that we can easily call and customize the color for (Like we do with social Icons)
 
-### **Full Install**
+### Full Install
 - [ ]  Name Split
 - [ ]  ACF Settings
 - [ ]  404 Messages

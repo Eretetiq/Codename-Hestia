@@ -1,19 +1,25 @@
-<?php
-function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $TypeValue, $SplitSource, $PackagedSource) {
+                  <?php 
+                  function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $TypeValue, $SplitSource, $PackagedSource) {
+                    // Check if required attributes are present
+                    $required_atts = ['featured', 'Type', 'Brand', 'Tier'];
+                    $missing_atts = array_diff($required_atts, array_keys($atts));
+                    if (!empty($missing_atts)) {
+                      return display_404_error();
+                    }
+
   $output = '';
   // Run the query
   $product_query = new WP_Query($query_args);
-  $output .= display_selection_text();
-  $output .= '<div class="product_column">';
-  // Declare the $products array and output variable
 
+  // Declare the $products array and output variable
+  $output .= '<div class="product_column">';
   $products = array();
 
   if ($product_query->have_posts()) {
     while ($product_query->have_posts()) {
       $product_query->the_post();
       $title = get_the_title();
-
+    
       // Add text to the title based on $_GET variables
       if ($TypeValue == 'Air Conditioner') {
         if ($SplitSource == 'Natural Gas') {
@@ -77,15 +83,13 @@ function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $Typ
       $output .= '<input type="radio" name="product" value="' . $product['title'] . '" onclick="updateProductTitle(\'' . $product['title'] . '\', \'' . $product['price'] . '\')"></input>';
       $output .= '</div>';
       $output .= '</label>';
-
     }
     $output .= '</div>';
   }
-
-      else {
-      // Call the display_404_error function
-      $output .= display_404_error();
-      }
+  
+  else {
+    return display_404_error();
+  }
   wp_reset_postdata();
 
   return $output;

@@ -1,51 +1,39 @@
-
-body
-{
-  background-color:#141019;
-  background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
+*{
+  transition: all 0.6s;
 }
 
-
-#handboy
-{
-   animation: swing ease-in-out 1.3s infinite alternate;
-    transform-origin: 98% 98%;
-    transform-box: fill-box;
-    
+html {
+  height: 100%;
 }
 
-
-#girllight
-{
-   animation: swing ease-in-out 1.3s infinite alternate;
-    transform-origin: 0% 97%;
-    transform-box: fill-box;
+body{
+  font-family: 'Lato', sans-serif;
+  color: #888;
+  margin: 0;
 }
 
-#hairgirl
-{
-    animation: swinghair ease-in-out 1.3s infinite alternate;
-   transform-origin: 60% 0%;
-    transform-box: fill-box;
-  
+#main{
+  horizontal-align: center;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  align-self: center;
 }
 
-#zero
-{
-  transform-origin:bottom;
-  transform-box:fill-box;
-  
+.fof{
+  display: table-cell;
+  vertical-align: middle;
 }
 
-/*************swing************/
-@keyframes swing {
-    0% { transform: rotate(10deg); }
-    100% { transform: rotate(-10deg); }
+.fof h1{
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+  animation: type .5s alternate infinite;
 }
 
-
-/*************swing hair************/
-@keyframes swinghair {
-    0% { transform: rotate(6deg); }
-    100% { transform: rotate(-6deg); }
+@keyframes type{
+  from{box-shadow: inset -3px 0px 0px #888;}
+  to{box-shadow: inset -3px 0px 0px transparent;}
 }

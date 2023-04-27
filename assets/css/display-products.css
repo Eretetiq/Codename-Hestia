@@ -24,7 +24,7 @@
                         }
 
 /*Grid*/
-            Grid Setting #lfb_bootstraped.lfb_bootstraped .product_column > * {
+            Grid Setting #lfb_bootstraped.lfb_bootstraped .product-column > * {
                   display: grid;
                   grid-template-rows: 300px 100px repeat(auto-fill, 100px) 200px 200px;
             /* Set the size of the top, middle, and bottom rows */

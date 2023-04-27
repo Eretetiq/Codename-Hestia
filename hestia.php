@@ -8,8 +8,9 @@
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       BxB Product Selector Plutgin
- * Plugin URI:         https://github.com/SABlackWood/Codename-Hestia
+ * Plugin Name:       BxB Product Selector Plugin
+ * Plugin URI:        https://github.com/SABlackWood/Codename-Hestia
+ * Development Link:  https://github.com/SABlackWood/Codename-Hestia/tree/Acheron
  * Description:       The plugin enables an HVAC website to pull products from a custom post type called "hvac-product" in WordPress, based on certain parameters such as product type, manufacturer, rating and price tier. 
  * Version:           25.1.10
  * Version Name:      Acheron
@@ -37,16 +38,19 @@
 add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
 // Main Function File
 require_once( plugin_dir_path( __FILE__ ) . 'includes/display-products.php' );
-// Main Function Modules
+// Main Function Moduless
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/default-brand.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/default-attributes.php');
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/get-url-values.php');
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/override-attributes.php');
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/query-arguments.php');
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/product-query.php');
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/display-404-error.php');
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/display-selection-text.php');
+
 // Dashboard Function File
 require_once( plugin_dir_path( __FILE__ ) . 'includes/menu-dashboard.php' );
-// Service Area Check Module
+// Dashboard Function Files
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/sac/sac-check.php' );
 // Shortcodes
 add_shortcode('display-products', 'display_products'); // Main Function

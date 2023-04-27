@@ -16,6 +16,7 @@ function setup_query_args($atts) {
         'terms' => !empty($atts['Type']) ? $atts['Type'] : $TypeValue,
     ];
   }
+
   if (!empty($atts['Brand'])) {
     $tax_query[] = [
         'taxonomy' => 'product_manufacturer',
@@ -65,5 +66,3 @@ function setup_query_args($atts) {
 
   return $query_args;
 }
-
-
