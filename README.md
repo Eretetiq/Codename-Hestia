@@ -20,6 +20,7 @@ CSS - On Hover it overlaps with uper content
 404 Custom Message needs to be Acheived
 ### Removed
 Unnecessary files and old functions
+
 ### Note
 The new code dynamically appends product information to the product title based on customer input. Depending on both the Type of Equipment and the Heating source, it will append that information to the title of the product. This improves the accuracy and relevance of the product titles for customers. Additionally, the modularity of the main plugin function makes it easier to maintain and update the plugin in the future.
 

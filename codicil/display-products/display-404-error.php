@@ -1,9 +1,15 @@
 <?php
 function display_404_error() {
-  $output .= '<div id="main">';
-    $output .= '<div class="fof">';
-      $output .= '<h1>No Products Found</h1>';
-    $output .= '</div>';
-  $output .= '</div>';
-  return $output;
+  ob_start(); ?>
+  <html>
+  <body>
+    <div id="main">
+      <div class="fof">
+        <h2>No Products Found</h2>
+      </div>
+    </div>
+  </body>
+  </html>
+  <?php
+  return ob_get_clean();
 }

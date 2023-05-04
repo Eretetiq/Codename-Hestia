@@ -249,7 +249,7 @@
             #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product:hover li,
             #lfb_bootstraped.lfb_bootstraped .div-box-product.grey-product:hover p {
                   transition: all 800ms ease-in-out;
-                  color: var(--font-hover);
+                  color: var(--price-font-selected);
             }
 /*Radio Button*/
 
@@ -258,7 +258,7 @@
             }
 
 /*311 Call out*/
-/*#lfb_bootstraped.lfb_bootstraped #three-eleven {
+#lfb_bootstraped.lfb_bootstraped #three-eleven {
       visibility: hidden;
       position: relative;
     }
@@ -268,7 +268,7 @@
       top: 0;
       left: 0;
       content: "This text replaces the original.";
-    }*/
+    }
 
 /*Responsiveness @Media Settings*/
             @media (max-width: 1024px) {
@@ -286,3 +286,4 @@
                   grid-template-columns: 1fr;
             }
             }
+ 

@@ -30,6 +30,7 @@
   function hestia_enqueue_styles_and_scripts() {
     //CSS
     wp_enqueue_style( 'display-products-styles', plugin_dir_url( __FILE__ ) . 'assets/css/display-products.css' );
+    wp_enqueue_style( 'display-products-styles', plugin_dir_url( __FILE__ ) . 'assets/css/404.css' );
     //JavaScripts
     wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
     wp_enqueue_script( 'button-overide', plugin_dir_url( __FILE__ ) . '/assets/js/button-overide.js', array(), '1.0', true );

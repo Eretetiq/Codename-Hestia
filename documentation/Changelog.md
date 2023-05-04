@@ -8,8 +8,10 @@ HVAC Product Selector Documentation
 Hold File to Long Form
 Comments on all files
 Product Selection Verbiage
+The use of the 404 Function lives on the main function (includes/display-products) and not in the codicil folder
 ### Fixed
 404 Message Not Displaying from a Function after Modulization
+404 Message not showing up properly when certain fields were not filled out
 ### Bugs
 Products Read More
 404 Custom Messages
@@ -18,6 +20,8 @@ Text Above Conditional
 ### Removed
 404 CSS
 404 HTML
+Products Read More
+Split System Verbiage from Products
 ## v25.1.10 - Acheron
 ### Added
 Added new code to dynamically append product information to the product title based on customer input

@@ -2,13 +2,12 @@
 function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $TypeValue, $SplitSource, $PackagedSource) {
   $output = '';
   // Run the query
-  $product_query = new WP_Query($query_args);
+  $product_query = new WP_Query($query_args);            
   $output .= display_selection_text();
-  $output .= '<div class="product_column">';
+
   // Declare the $products array and output variable
-
+  $output .= '<div class="product_column">';
   $products = array();
-
   if ($product_query->have_posts()) {
     while ($product_query->have_posts()) {
       $product_query->the_post();
@@ -17,21 +16,21 @@ function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $Typ
       // Add text to the title based on $_GET variables
       if ($TypeValue == 'Air Conditioner') {
         if ($SplitSource == 'Natural Gas') {
-          $title .= ' + Gas Furnace Split System';
+          $title .= ' + Gas Furnace';
         } elseif ($SplitSource == 'Electric') {
-          $title .= ' + Air Handling Unit Split System';
+          $title .= ' + Air Handling Unit';
         }
       } elseif ($TypeValue == 'Heat Pump') {
         if ($SplitSource == 'Natural Gas') {
-          $title .= ' + Gas Furnace Split System';
+          $title .= ' + Gas Furnace';
         } elseif ($SplitSource == 'Electric') {
-          $title .= ' + Air Handling Unit Split System';
+          $title .= ' + Air Handling Unit';
         }
       } elseif ($TypeValue == 'Packaged Unit') {
         if ($PackagedSource == 'Natural Gas') {
-          $title .= ' + Gas Heat Split System';
+          $title .= ' + Gas Heat';
         } elseif ($PackagedSource == 'Electric') {
-          $title .= ' + Electric Heat Split System';
+          $title .= ' + Electric Heat';
         }
       }
     
@@ -68,25 +67,20 @@ function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $Typ
       $output .= '<div class="div-box-product">';
       $output .= $product['thumbnail'];
       $output .= '<h2>' . $product['title'] . '</h2>';
+                                          
       if (isset($product['price']) && !empty($product['price'])) {
         $output .= '<div class="price" style="font-weight:bold;">$' . $product['price'] . '</div>';
       } else {
         $output .= '<div class="price-lost" style="font-weight:bold;">Price not available</div>';
       }
-      $output .= '<p>' . $product['excerpt'] . '</p>';
+      $output .= '<p>' . $product['excerpt'] . '</p>';                                                
       $output .= '<input type="radio" name="product" value="' . $product['title'] . '" onclick="updateProductTitle(\'' . $product['title'] . '\', \'' . $product['price'] . '\')"></input>';
       $output .= '</div>';
       $output .= '</label>';
-
     }
     $output .= '</div>';
   }
-
-      else {
-      // Call the display_404_error function
-      $output .= display_404_error();
-      }
   wp_reset_postdata();
 
   return $output;
-}
+  }
