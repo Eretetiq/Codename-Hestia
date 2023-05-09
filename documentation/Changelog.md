@@ -9,6 +9,8 @@ Hold File to Long Form
 Comments on all files
 Product Selection Verbiage
 The use of the 404 Function lives on the main function (includes/display-products) and not in the codicil folder
+Verbiage on the Zip Code array that was causing issues
+Verbiage on the Footer Text as a place holder for now.
 ### Fixed
 404 Message Not Displaying from a Function after Modulization
 404 Message not showing up properly when certain fields were not filled out
