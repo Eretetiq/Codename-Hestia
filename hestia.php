@@ -8,11 +8,11 @@
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       BxB Product Selector Plugin
+ * Plugin Name:       BxB - Product Selector
  * Plugin URI:        https://github.com/SABlackWood/Codename-Hestia
  * Development Link:  https://github.com/SABlackWood/Codename-Hestia/tree/Acheron
  * Description:       The plugin enables an HVAC website to pull products from a custom post type called "hvac-product" in WordPress, based on certain parameters such as product type, manufacturer, rating and price tier. 
- * Version:           25.1.10
+ * Version:           25.1.13
  * Version Name:      Acheron
  * Requires at least: 5.7.28
  * Requires PHP:      6.1.9
@@ -22,6 +22,7 @@
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Codename:          Hestia
+ * Dependencies:      WP Import Export, WP Cost Estimation & Payment Builder, ACF Pro
  */
 //Just for security measures
  if ( ! defined( 'ABSPATH' ) ) {
@@ -30,7 +31,8 @@
   function hestia_enqueue_styles_and_scripts() {
     //CSS
     wp_enqueue_style( 'display-products-styles', plugin_dir_url( __FILE__ ) . 'assets/css/display-products.css' );
-    wp_enqueue_style( 'display-products-styles', plugin_dir_url( __FILE__ ) . 'assets/css/404.css' );
+    wp_enqueue_style( '404-styles', plugin_dir_url( __FILE__ ) . 'assets/css/404.css' );
+    wp_enqueue_style( 'ep-form-styles', plugin_dir_url( __FILE__ ) . 'assets/css/ep-form.css' );
     //JavaScripts
     wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
     wp_enqueue_script( 'button-overide', plugin_dir_url( __FILE__ ) . '/assets/js/button-overide.js', array(), '1.0', true );

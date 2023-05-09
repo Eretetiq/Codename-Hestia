@@ -267,7 +267,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      content: "This text replaces the original.";
+      content: "Have too many question and want to talk to a real person? Give us a call now at 222-222-2222.";
     }
 
 /*Responsiveness @Media Settings*/
@@ -286,4 +286,3 @@
                   grid-template-columns: 1fr;
             }
             }
- 

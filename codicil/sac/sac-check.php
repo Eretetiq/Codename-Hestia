@@ -59,9 +59,9 @@ function sac_check() {
 
             // Check if the value is in the array
             if (sacArray.includes(value)) {
-                resultDiv.innerHTML = 'Value is in the array!';
+                resultDiv.innerHTML = 'You are in the Service Area!';
             } else {
-                resultDiv.innerHTML = 'Value is not in the array.';
+                resultDiv.innerHTML = 'You are not in the Service Area';
             }
         }
     </script>

@@ -1,0 +1,60 @@
+/* Pop-up form */
+#lfb_form.lfb_bootstraped.lfb_fullscreen {
+    width: 70% !important; /* reduce the width of the form */
+    height: 70% !important; /* reduce the height of the form */
+    top: 0% !important; /* add space at the top of the form */
+    left: 15% !important; /* add space at the left of the form */
+    max-width: 80% !important;
+    max-height: 70% !important;
+    min-height: 800px !important;
+    z-index: 2 !important;
+}
+/*Border Bug*/
+#lfb_form.lfb_bootstraped[data-form="11"] {
+    background-color: #ecf0f1 !important;
+    color: #95a5a6 !important;
+  }
+
+  #lfb_form.lfb_bootstraped[data-form="30"] {
+    background-color: #ecf0f1 !important;
+    color: #95a5a6 !important;
+  }
+/* Dark overlay */
+.lfb_bootstraped {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    z-index: 1 !important;
+}
+
+/* Form title */
+#lfb_form.lfb_bootstraped .lfb_genSlide .lfb_stepTitle {
+    position: absolute !important;
+    width: 70% !important;
+    left: 15% !important;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-top: -46px !important;
+    font-size: 17px!important;
+    line-height: 1.1 !important;
+    margin-bottom: 15px !important;
+    -webkit-transition: top .5s ease-out !important;
+    transition: top .5s ease-out !important;
+}
+
+/* Form title gutter */
+#lfb_form.lfb_bootstraped .lfb_genSlide .lfb_genContent.lfb_noDes {
+    padding-top: 50px !important;
+}
+
+/* Form title positioning */
+#lfb_form.lfb_bootstraped[data-animspeed="0"] #lfb_mainPanel .lfb_genSlide .lfb_stepTitle,
+#lfb_form.lfb_bootstraped .lfb_genSlide .lfb_stepTitle.positioned {
+    top: 20px !important;
+}
+
+
+[video_lightbox_vimeo5 video_id="775893284" width="640" height="480" anchor="https://staging-a24hvacestimationsource-a24test.kinsta.cloud/wp-content/uploads/PPC-Ads-for-HVAC-Business.webp"]
