@@ -12,7 +12,7 @@
  * Plugin URI:        https://github.com/SABlackWood/Codename-Hestia
  * Development Link:  https://github.com/SABlackWood/Codename-Hestia/tree/Acheron
  * Description:       The plugin enables an HVAC website to pull products from a custom post type called "hvac-product" in WordPress, based on certain parameters such as product type, manufacturer, rating and price tier. 
- * Version:           25.1.13
+ * Version:           25.1.14
  * Version Name:      Acheron
  * Requires at least: 5.7.28
  * Requires PHP:      6.1.9
@@ -32,10 +32,11 @@
     //CSS
     wp_enqueue_style( 'display-products-styles', plugin_dir_url( __FILE__ ) . 'assets/css/display-products.css' );
     wp_enqueue_style( '404-styles', plugin_dir_url( __FILE__ ) . 'assets/css/404.css' );
-    wp_enqueue_style( 'ep-form-styles', plugin_dir_url( __FILE__ ) . 'assets/css/ep-form.css' );
+    wp_enqueue_style( 'custum-messages', plugin_dir_url( __FILE__ ) . 'assets/css/custom-messages.css' );
     //JavaScripts
     wp_enqueue_script( 'custom-column-select', plugin_dir_url( __FILE__ ) . '/assets/js/custom-column-select.js', array(), '1.0', true );
     wp_enqueue_script( 'button-overide', plugin_dir_url( __FILE__ ) . '/assets/js/button-overide.js', array(), '1.0', true );
+    //PHP
     wp_enqueue_script( 'ajax-script', admin_url( 'admin-ajax.php' ), array( 'jquery' ) );
   }
 add_action( 'wp_enqueue_scripts', 'hestia_enqueue_styles_and_scripts' );
@@ -51,10 +52,11 @@ require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/product-qu
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/display-404-error.php');
 require_once( plugin_dir_path( __FILE__ ) . 'codicil/display-products/display-selection-text.php');
 
-// Dashboard Function File
-require_once( plugin_dir_path( __FILE__ ) . 'includes/menu-dashboard.php' );
 // Dashboard Function Files
-require_once( plugin_dir_path( __FILE__ ) . 'codicil/sac/sac-check.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/menu-dashboard.php' );
+// Dashboard Module Files
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/dashboard-modules/sac/sac-check.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'codicil/dashboard-modules/general-settings/brand-selection.php' );
 // Shortcodes
 add_shortcode('display-products', 'display_products'); // Main Function
 add_shortcode( 'sac-check', 'sac_check' ); // Service Area Codes

@@ -1,8 +1,24 @@
+## v25.2.1 - Acheron
+### Added
+Created Dashboard Message CSS
+### Changed
+Moved Dashboard modules into its own folder to future proof
+Moved Brand Module to Make it Future Proof
+Tweaked the CSS for Zips A Little
+Location of sac to dashboard modules
+### Fixed
+
+### Bugs
+
+### Removed
+
 ## v25.1.11 - Acheron
 ### Added
 Proper README Documentation
 $GET Variables Documentation
 HVAC Product Selector Documentation
+Comma has been added to pricing
+
 ### Changed
 404 Function
 Hold File to Long Form
@@ -11,19 +27,26 @@ Product Selection Verbiage
 The use of the 404 Function lives on the main function (includes/display-products) and not in the codicil folder
 Fixed Zip Verbiage [You're to You are, apostrophe was causing a bug, will fix.]
 Fixed Placeholder Text in CSS
+Hi-jacked the form button to push us forward. that way when the correct zip is selected the form can move forward.
+Pricing has been changed to reflect more real world numbers.
+
 ### Fixed
 404 Message Not Displaying from a Function after Modulization
 404 Message not showing up properly when certain fields were not filled out
+
 ### Bugs
 Products Read More
 404 Custom Messages
 Text Above Conditional
 404 CSS on H1
+
 ### Removed
 404 CSS
 404 HTML
 Products Read More
 Split System Verbiage from Products
+Zip Verbiage, Replaced it with a form forward movement action or a kick based on if its available or not.
+
 ## v25.1.10 - Acheron
 ### Added
 Added new code to dynamically append product information to the product title based on customer input

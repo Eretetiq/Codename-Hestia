@@ -11,7 +11,7 @@
     }
 // Load the 404 Messages options page
     function hestia_404_messages_page() {
-      require_once( dirname( __FILE__ ) . '/../codicil/dashboard/error-pages.php');
+      require_once( dirname( __FILE__ ) . '/../codicil/dashboard/custom-messages.php');
     }
 // Adds the menu pages
 // Main Page
@@ -44,11 +44,11 @@ function hestia_add_menu_pages() {
 // Custom Error Messgages Page
     add_submenu_page(
       'hestia-settings',
-      '404 Messages',
-      '404 Messages',
+      'Custom Messages',
+      'Custom Messages',
       'manage_options',
-      'hestia-404-messages-options',
-      'hestia_404_messages_page'
+      'custom-messages-options',
+      '_messages_page'
     );
   }
   // Adds Menu Entries to WP Dashboard

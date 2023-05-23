@@ -257,19 +257,6 @@
                   display: none;
             }
 
-/*311 Call out*/
-#lfb_bootstraped.lfb_bootstraped #three-eleven {
-      visibility: hidden;
-      position: relative;
-    }
-    #lfb_bootstraped.lfb_bootstraped #three-eleven:after {
-      visibility: visible;
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: "Have too many question and want to talk to a real person? Give us a call now at 222-222-2222.";
-    }
-
 /*Responsiveness @Media Settings*/
             @media (max-width: 1024px) {
             #lfb_bootstraped.lfb_bootstraped .product_column {

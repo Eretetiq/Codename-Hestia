@@ -1,4 +1,3 @@
-<!-- This is the HTML markup for the page -->
 <div class="wrap">
   <h1>Zip Codes</h1>
   <p>Changes the Zip Code Array</p>
@@ -13,7 +12,7 @@ if (empty($sac_array)) {
     echo 'Service area is not configured.';
 } else {
     // Output the $sac_array variable
-    echo '<div style="display: flex;"><div style="flex-grow: 1; margin-right: 20px;"><div class="sac-columns">';
+    echo '<div class="sac-columns">';
     $count = 0;
     foreach ($sac_array as $value) {
         if ($count % 4 == 0) {
@@ -25,10 +24,10 @@ if (empty($sac_array)) {
         }
         $count++;
     }
-    echo '</div></div>';
+    echo '</div>';
 
     // Output the total number of entries in the $sac_array variable
-    echo 'Total entries: ' . count($sac_array);
+    echo '<p>Total entries: ' . count($sac_array) . '</p>';
 }
 ?>
 
@@ -74,7 +73,6 @@ if (isset($_POST['upload-csv'])) {
 }
 ?>
 
-<!-- This is the CSS code that is used to style the output of the $sac_array variable -->
 <style>
     .sac-columns {
         display: flex;

@@ -67,9 +67,10 @@ function perform_product_query($query_args, $atts, $TierValue, $SplitValue, $Typ
       $output .= '<div class="div-box-product">';
       $output .= $product['thumbnail'];
       $output .= '<h2>' . $product['title'] . '</h2>';
-                                          
+                          
       if (isset($product['price']) && !empty($product['price'])) {
-        $output .= '<div class="price" style="font-weight:bold;">$' . $product['price'] . '</div>';
+        $formatted_price = number_format($product['price'], 0); // Format the price with two decimal places and commas
+        $output .= '<div class="price" style="font-weight:bold;">$' . $formatted_price . '</div>';
       } else {
         $output .= '<div class="price-lost" style="font-weight:bold;">Price not available</div>';
       }
